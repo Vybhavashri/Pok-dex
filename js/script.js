@@ -1,4 +1,3 @@
-let pokemonlist = [];
 let pokemonRepository = (function () {
   pokemonlist = [
     {
@@ -28,8 +27,6 @@ let pokemonRepository = (function () {
     },
     {
       name: 'Primeape',
-      height: 10,
-      types: 'Fighting'
     }
   ];
 
@@ -52,10 +49,10 @@ let pokemonRepository = (function () {
 pokemonRepository.add({ name: 'Pikachu', height: 4, types: 'Electric' });
 console.log(pokemonRepository.getAll());
 
-pokemonRepository.getAll().forEach(function(list) {
-  if (list.height > 13) {
-    document.write(`<p><b> ${list.name} (height: ${list.height}") - Wow, that’s big! </b></p>`);
+pokemonRepository.getAll().forEach(function(pokemon) {
+  if (pokemon.height > 13) {
+    document.write(`<p><b> ${pokemon.name} (height: ${pokemon.height}") - Wow, that’s big! </b></p>`);
   } else {
-    document.write(`<p> ${list.name} (height: ${list.height}")</p>`);
+    document.write(`<p> ${pokemon.name} (height: ${pokemon.height}")</p>`);
   }
 });
