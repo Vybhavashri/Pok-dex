@@ -10,34 +10,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Pokedex</title>
-
 </head>
 
 <body>
   <header>
     <!--- Navbar --->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="page-top">
-      <a class="navbar-brand"><img class="logo-custom" src="img/logo.png" alt="pokemon logo"></a>
-      <button class="navbar-toggler btn btn-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark" id="page-top">
+        <a class="navbar-brand"><img class="logo-custom" src="img/logo.png" alt="pokemon logo"></a>
+        <button class="navbar-toggler btn btn-warning" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" id="filter" type="search" placeholder="Pokemon search" aria-label="Search">
-        </form>
-      </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" id="filter" type="search" placeholder="Pokemon search" aria-label="Search">
+          </form>
+        </div>
+      </nav>
+    </div>
   </header>
   <!--- Navbar code ends --->
 
   <div class="text-center">
-    <h2>
+    <h1>
       POKEDEX
-    </h2>
+    </h1>
   </div>
 
-  <div class="container-fluid">
+  <div class="container">
     <ul class="pokemon-list list-group list-unstyled row justify-content-center"></ul>
   </div>
 
@@ -83,17 +84,17 @@
       </div>
     </div>
   </div>
-    <!--- Madal code ends --->
+  <!--- Madal code ends --->
 
-    <a href="#page-top" class="float-right">
-      <img src="img/move-up.png" alt="move to top of the page button" width="70">
-    </a>
+  <a href="#page-top" class="float-right">
+    <img src="img/move-up.png" alt="move to top of the page button" width="70">
+  </a>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 
-  </body>
-  </html>
+</body>
+</html>
