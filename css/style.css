@@ -1,19 +1,24 @@
+:root{
+  --base_font_color: #ddac00;
+  --base_bg_color : black;
+}
+
 *{
   font-family: 'Comic Neue', cursive  !important;
   font-size: 22px;
 }
 
 body{
-  background-color: black;
-  color: #ddac00;
+  background-color: var(--base_bg_color);
+  color: var(--base_font_color);
 }
 
 .nav-custom{
-  background-color: black !important;
+  background-color: var(--base_bg_color);
 }
 
 .close-custom{
-  color: #ddac00 !important;
+  color: var(--base_font_color);
 }
 
 .logo-custom{
@@ -32,5 +37,5 @@ body{
 }
 
 .modal-custom{
-  background-color: black;
+  background-color: var(--base_bg_color);;
 }
