@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'; //API url which has pokemon data
-  pokemonlist = [];
-  let modalContainer = document.querySelector("#pokemonModal");
+  let pokemonlist = [];
+  let modalContainer = document.querySelector('#pokemonModal');
   let filter = document.querySelector('#filter');
 
   //Function to add items to pokemonlist
@@ -41,7 +41,8 @@ let pokemonRepository = (function () {
     let weightElement = document.createElement('p');
     weightElement.innerText = 'Weight: ' + pokemon.weight;
     let typesElement = document.createElement('p');
-    typesElement.innerText = 'Types: ' + ' ' + pokemon.types.map((t)=> t.type.name).join(', ')
+    typesElement.innerText =
+      'Types: ' + ' ' + pokemon.types.map((t) => t.type.name).join(', ');
     let imageElement = document.createElement('img');
     imageElement.classList.add('img-custom');
     imageElement.src = pokemon.imageUrl;
@@ -60,9 +61,18 @@ let pokemonRepository = (function () {
 
   //Function to create pokemon names as list of buttons
   function addListItem(pokemon) {
-    let pokemonUl =document.querySelector('.pokemon-list');
+    let pokemonUl = document.querySelector('.pokemon-list');
     let pokemonLi = document.createElement('li');
+<<<<<<< Updated upstream
     pokemonLi.classList.add('group-list-item','col-xl-3','col-lg-4','col-md-6');
+=======
+    pokemonLi.classList.add(
+      'group-list-item',
+      'col-xl-3',
+      'col-lg-4',
+      'col-md-6'
+    );
+>>>>>>> Stashed changes
     let pokemonButton = document.createElement('button');
     pokemonButton.innerText = pokemon.name.toUpperCase();
     pokemonButton.classList.add('btn', 'btn-warning', 'btn-block');
@@ -70,41 +80,47 @@ let pokemonRepository = (function () {
     pokemonButton.setAttribute('data-target', 'modal');
     pokemonLi.appendChild(pokemonButton);
     pokemonUl.appendChild(pokemonLi);
-    pokemonButton.addEventListener('click', function(){
+    pokemonButton.addEventListener('click', function () {
       showDetails(pokemon);
     });
   }
 
   //Function to fetch data from API
   function loadList() {
-    return fetch(apiUrl).then(function (response) {
-      return response.json();
-    }).then(function (json) {
-      json.results.forEach(function (item) {
-        let pokemon = {
-          name: item.name,
-          detailsUrl: item.url
-        };
-        add(pokemon);
+    return fetch(apiUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url,
+          };
+          add(pokemon);
+        });
+      })
+      .catch(function (e) {
+        console.error(e);
       });
-    }).catch(function (e) {
-      console.error(e);
-    })
   }
 
   //Function to load the details
   function loadDetails(item) {
     let url = item.detailsUrl;
-    return fetch(url).then(function (response) {
-      return response.json();
-    }).then(function (details) {
-      item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
-      item.weight = details.weight;
-      item.types = details.types;
-    }).catch(function (e) {
-      console.error(e);
-    });
+    return fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (details) {
+        item.imageUrl = details.sprites.front_default;
+        item.height = details.height;
+        item.weight = details.weight;
+        item.types = details.types;
+      })
+      .catch(function (e) {
+        console.error(e);
+      });
   }
 
   //Hide modal when Escape key is pressed
@@ -139,17 +155,17 @@ let pokemonRepository = (function () {
   return {
     add: add,
     getAll: getAll,
-    addListItem : addListItem,
+    addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
-    showModal: showModal
+    showModal: showModal,
   };
 })();
 
 //Function to print the Pokemon list
-pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().forEach(function(pokemon){
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
