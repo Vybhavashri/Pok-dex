@@ -3,6 +3,9 @@
 - Git URL: https://github.com/Vybhavashri/Pokedex
 - Deployment URL: https://vybhavashri.github.io/Pokedex/
 
+![1 Pokedex](https://user-images.githubusercontent.com/46229037/159339300-0b69362a-068f-4305-910e-d95190d4d914.jpg)
+
+
 ## User Goals
 Users should be able to view and search the list of Pokemon data.
 
